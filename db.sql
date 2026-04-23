@@ -96,7 +96,7 @@ DECLARE
     yesterday_date TEXT;
     output_file TEXT;
 BEGIN
-    yesterday_date := TO_CHAR(CURRENT_DATE - INTERVAL '1 day', 'YYYYMMDD');
+    yesterday_date := TO_CHAR(CURRENT_DATE - INTERVAL '1 day', 'YYYYMMDD_HH24MI');
     output_file := '/tmp/users_audit_export_' || yesterday_date || '.csv';
     EXECUTE FORMAT(
         'COPY (
